@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SystemPerformanceMonitor.App/SystemPerformanceMonitor.App.csproj" />
+  <Project Path="SystemPerformanceMonitor.Core/SystemPerformanceMonitor.Core.csproj" />
+  <Project Path="SystemPerformanceMonitor.Infrastructure/SystemPerformanceMonitor.Infrastructure.csproj" />
+  <Project Path="SystemPerformanceMonitor.Tests/SystemPerformanceMonitor.Tests.csproj" />
+</Solution>
