@@ -6,10 +6,51 @@
         xmlns:local="clr-namespace:SystemPerformanceMonitor.App"
         mc:Ignorable="d"
         Title="System Performance Monitor" Height="450" Width="800">
-    <Grid>
-        <TextBlock Text="{Binding Status}"
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="System Performance Monitor"
+                   FontSize="28"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="24" />
+                   Margin="0,0,0,30" />
+
+        <TextBlock Grid.Row="1"
+                   Text="{Binding CpuUsage, StringFormat=CPU Usage: {0:F1}%}"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,15" />
+
+        <TextBlock Grid.Row="2"
+                   Text="{Binding MemoryUsage, StringFormat=Memory Usage: {0:F1}%}"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,30" />
+
+        <TextBlock Grid.Row="3"
+                   Text="{Binding Status}"
+                   FontSize="20"
+                   HorizontalAlignment="Center" />
+
+        <StackPanel Grid.Row="4"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Content="Start Monitoring"
+                    Command="{Binding StartMonitoringCommand}"
+                    Margin="5" />
+
+            <Button Content="Stop Monitoring"
+                    Command="{Binding StopMonitoringCommand}"
+                    Margin="5" />
+
+        </StackPanel>
+        
     </Grid>
+    
 </Window>

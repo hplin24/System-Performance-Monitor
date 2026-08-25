@@ -5,7 +5,7 @@ using SystemPerformanceMonitor.Core.Models;
 
 namespace SystemPerformanceMonitor.Core.Interfaces
 {
-    internal interface IMetricsCollector
+    public interface IMetricsCollector
     {
         PerformanceMetrics GetCurrentMetrics();
     }

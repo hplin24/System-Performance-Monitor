@@ -6,7 +6,7 @@ using SystemPerformanceMonitor.Core.Models;
 
 namespace SystemPerformanceMonitor.Core.Services
 {
-    internal class MetricsService
+    public class MetricsService
     {
         private readonly IMetricsCollector _metricsCollector;
 

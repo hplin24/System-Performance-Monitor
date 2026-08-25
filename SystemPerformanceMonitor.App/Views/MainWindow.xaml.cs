@@ -9,6 +9,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SystemPerformanceMonitor.App.ViewModels;
+using SystemPerformanceMonitor.Core.Services;
+using SystemPerformanceMonitor.Infrastructure.Metrics;
 
 namespace SystemPerformanceMonitor.App.Views
 {
@@ -21,7 +23,10 @@ namespace SystemPerformanceMonitor.App.Views
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel();
+            var collector = new WindowsMetricsCollector();
+            var metricsService = new MetricsService(collector);
+
+            DataContext = new MainViewModel(metricsService);
         }
     }
 }
