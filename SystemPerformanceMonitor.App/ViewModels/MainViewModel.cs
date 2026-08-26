@@ -7,7 +7,7 @@ using SystemPerformanceMonitor.Core.Services;
 
 namespace SystemPerformanceMonitor.App.ViewModels
 {
-    internal partial class MainViewModel : ObservableObject
+    public partial class MainViewModel : ObservableObject
     {
         private readonly MetricsService _metricsService;
 

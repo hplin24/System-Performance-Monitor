@@ -19,14 +19,15 @@ namespace SystemPerformanceMonitor.App.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainViewModel viewModel)
         {
             InitializeComponent();
 
-            var collector = new WindowsMetricsCollector();
-            var metricsService = new MetricsService(collector);
+            // We use DI now
+            //var collector = new WindowsMetricsCollector();
+            //var metricsService = new MetricsService(collector);
 
-            DataContext = new MainViewModel(metricsService);
+            DataContext = viewModel;
         }
     }
 }
